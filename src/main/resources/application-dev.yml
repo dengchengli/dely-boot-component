@@ -1,0 +1,54 @@
+server:
+  port: 8084
+
+spring:
+  # 数据源配置
+  datasource:
+    # jdbc 配置
+    url: jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    # 连接数据库的密码。如果你不希望密码直接写在配置文件中，可以使用ConfigFilter
+    password: HToxd79GatapwT2k3B2/hF1VuEAJCOYMXKV/tZ0RegEKuBfldvcuF8T8A1j9SaQc1M2wI88Qw9j1rsaPkdQuRw==
+    # 这一项可配可不配，如果不配置druid会根据url自动识别dbType，然后选择相应的driverClassName
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    # 使用 druid 的配置项配置 jdbc
+    #druid:
+    #  url: jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    #  username: root
+    #  password: 123456
+    #  driver-class-name: com.mysql.cj.jdbc.Driver
+
+    # druid数据库连接池 配置
+    druid:
+      # 秘钥
+      public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJFJuF5XOpZ0zS6MfYYJz21BIfnuyx68vNITYleTN3v4P1lcAPCWGre6Gb/fcc1JRdxKhM1fthtZwo9g9EQM8EsCAwEAAQ==
+      # 解密数据库密码
+      connection-properties: config.decrypt=true;config.decrypt.key=${public-key}
+      # 是否开启数据库密码解密功能:
+      filter:
+        config:
+          enabled: true
+      # 初始化线程数
+      initial-size:
+      max-active:
+      min-idle:
+      max-wait:
+      pool-prepared-statements:
+      max-pool-prepared-statement-per-connection-size:
+      max-open-prepared-statements: #和上面的等价
+      validation-query:
+      validation-query-timeout:
+      test-on-borrow:
+      test-on-return:
+      test-while-idle:
+      time-between-eviction-runs-millis:
+      min-evictable-idle-time-millis:
+      max-evictable-idle-time-millis:
+      filters: #配置多个英文逗号分隔
+
+
+
+
+
+
